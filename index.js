@@ -15,7 +15,7 @@ const loadAiData = async (dataLimit) => {
 const seeMoreContainer = document.getElementById("see-more-container");
 
 const displayAiData = (aiData, dataLimit) => {
-    console.log(aiData);
+    // console.log(aiData);
     // console.log(aiData.map((date) => date.published_in));
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
@@ -57,11 +57,26 @@ const sortedDataByDate = async () => {
         const data = await res.json();
         const dataForSorting = data.data.tools;
         // console.log(dataForSorting);
+        dataForSorting.forEach((eachData) => {
+            // console.log(eachData);
+            const dateArray = eachData.published_in.split("/");
+            // console.log(dateArray);
+            let day = parseFloat(dateArray[0])
+            let month = parseFloat(dateArray[1]) - 1;
+            let year = parseFloat(dateArray[2]);
+            // console.log(day, month, year);
+            let dataDate = new Date(year, month, day);
+            // console.log(dataDate);
+            eachData.published_in = dataDate;
+            // console.log(dataForSorting);
+
+        })
+
         const sortedDate = dataForSorting.sort((a, b) => {
-            return parseFloat(b.published_in) - parseFloat(a.published_in);
+            return (b.published_in) - (a.published_in);
         })
         // console.log(sortedDate.map(data => data.published_in));
-        // console.log(sortedDate);
+        console.log(sortedDate);
         displayAiData(sortedDate);
     }
     catch (error) {
