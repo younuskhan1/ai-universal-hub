@@ -11,7 +11,18 @@ const loadAiData = async () => {
     }
 }
 const displayAiData = (aiData) => {
-    console.log(aiData)
+    const cardContainer = document.getElementById("card-container");
+    aiData.forEach(data => {
+        console.log(data);
+        const cardDiv = document.createElement("div");
+        cardDiv.classList = `"w-[30%]"`
+        cardDiv.innerHTML = `
+        <div><img class = w-"[100%]" src="${data.image ? data.image : "./missing-images/jasper-image.webp"}" alt=""></div>
+        
+        
+        `;
+        cardContainer.appendChild(cardDiv);
+    })
 }
 
 
