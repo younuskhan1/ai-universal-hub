@@ -1,0 +1,31 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#sort-by-data-button {
+    background: #EB5757;
+    border: 0;
+    border-radius: 12px;
+    box-sizing: border-box;
+    color: #ffff;
+    cursor: pointer;
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    padding: 17px 22px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transform: translateZ(0) scale(1);
+    transition: transform .5s;
+}
+
+
+
+#sort-by-data-button:hover {
+    background-color: #332cf2;
+    transform: scale(1.05);
+}
