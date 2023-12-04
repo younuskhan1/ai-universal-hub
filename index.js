@@ -24,8 +24,12 @@ const displayAiData = (aiData) => {
             <p class="text-[#585858] pl-1"> 2. ${data.features[1]}</p>
             <p class="text-[#585858] pl-1"> 3. ${data.features[2]}</p>
         </div>
-        <div>
-         <h2>${data.name}</h2>
+        <div class="flex justify-between items-center pl-4 p-4">
+          <div>
+            <h2 class="font-bold text-lg text-[#111]">${data.name}</h2>
+            <p class="text-[#585858]"><i class="fa-regular fa-calendar-days pr-2"></i>${data.published_in}</P>
+          </div>
+          <div class="flex justify-center items-center bg-[#FEF7F7] cursor-pointer hover:bg-[#f3a5a5] rounded-full"><i class="fa-solid fa-arrow-right text-[#EB5757] py-[14px] px-[14px] hover:text-white"></i></div>
         </div>
         
         `;
