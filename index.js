@@ -31,7 +31,6 @@ const displayAiData = (aiData) => {
           </div>
           <div class="flex justify-center items-center bg-[#FEF7F7] cursor-pointer hover:bg-[#f3a5a5] rounded-full"><i class="fa-solid fa-arrow-right text-[#EB5757] py-[14px] px-[14px] hover:text-white"></i></div>
         </div>
-        
         `;
         cardContainer.appendChild(cardDiv);
     })

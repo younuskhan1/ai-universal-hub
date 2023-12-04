@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-#sort-by-data-button {
+.sort-by-data-button,
+.see-more-button {
     background: #EB5757;
     border: 0;
     border-radius: 12px;
@@ -25,7 +26,8 @@
 
 
 
-#sort-by-data-button:hover {
+.sort-by-data-button:hover,
+.see-more-button:hover {
     background-color: #332cf2;
     transform: scale(1.05);
 }
