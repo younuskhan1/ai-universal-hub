@@ -80,6 +80,8 @@ const sortedDataByDate = async () => {
             //dataForSorting array of objects for sorting out the date
             eachData.published_in = dataDate;
             // console.log(dataForSorting);
+            // to know details about above discussion you can go to this below link ....
+            // https://hackernoon.com/how-to-sort-an-array-by-date-in-javascript 
 
         })
 
