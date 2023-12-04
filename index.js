@@ -35,7 +35,7 @@ const displayAiData = (aiData, dataLimit) => {
             <h3 class="font-bold text-lg text-[#111]">Features :</h3>
             <p class="text-[#585858] pl-1"> 1. ${data.features[0]}</p>
             <p class="text-[#585858] pl-1"> 2. ${data.features[1]}</p>
-            <p class="text-[#585858] pl-1"> 3. ${data.features[2]}</p>
+            <p class="text-[#585858] pl-1"> 3. ${data.features[2] ? data.features[2] : "data is not avilable"}</p>
         </div>
         <div class="flex justify-between items-center pl-4 p-4">
           <div class="text-[13px]">
@@ -57,16 +57,25 @@ const sortedDataByDate = async () => {
         const data = await res.json();
         const dataForSorting = data.data.tools;
         // console.log(dataForSorting);
+        // by looping we caught each object existed the array.
         dataForSorting.forEach((eachData) => {
             // console.log(eachData);
+            // Split the date by the slash to convert the
+            //  date (3/3/2022) into an array of [ '3', '3', '2022' ], for example
             const dateArray = eachData.published_in.split("/");
             // console.log(dateArray);
+            // We caught year, month, and day from the array.We subtract 1 from month,
+            // because months start counting from 0 in Javascript dates.
+            // converting the string into number by parseFloat().
             let day = parseFloat(dateArray[0])
             let month = parseFloat(dateArray[1]) - 1;
             let year = parseFloat(dateArray[2]);
             // console.log(day, month, year);
+            // Pass in the different components as year, month, day to get the valid date.
             let dataDate = new Date(year, month, day);
             // console.log(dataDate);
+            // Update the object and pushed the updated year, month and day to 
+            //dataForSorting array for sorting out the date
             eachData.published_in = dataDate;
             // console.log(dataForSorting);
 
@@ -76,7 +85,7 @@ const sortedDataByDate = async () => {
             return (b.published_in) - (a.published_in);
         })
         // console.log(sortedDate.map(data => data.published_in));
-        console.log(sortedDate);
+        // console.log(sortedDate);
         displayAiData(sortedDate);
     }
     catch (error) {
