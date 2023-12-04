@@ -56,6 +56,8 @@ const sortedDataByDate = async () => {
         const res = await fetch(url);
         const data = await res.json();
         const dataForSorting = data.data.tools;
+        // dataForSorting is updated from below (eachData.published_in = dataDate;) line.
+        // so we get the sorted updated objects here at dataForSorting array of objects. 
         // console.log(dataForSorting);
         // by looping we caught each object existed the array.
         dataForSorting.forEach((eachData) => {
@@ -74,8 +76,8 @@ const sortedDataByDate = async () => {
             // Pass in the different components as year, month, day to get the valid date.
             let dataDate = new Date(year, month, day);
             // console.log(dataDate);
-            // Update the object and pushed the updated year, month and day to 
-            //dataForSorting array for sorting out the date
+            // Updating the above dataForSorting array objects and pushed the updated year, month and day to 
+            //dataForSorting array of objects for sorting out the date
             eachData.published_in = dataDate;
             // console.log(dataForSorting);
 
