@@ -17,8 +17,13 @@ const displayAiData = (aiData) => {
         const cardDiv = document.createElement("div");
         cardDiv.classList = `"w-[30%]"`
         cardDiv.innerHTML = `
-        <div><img class = w-"[100%]" src="${data.image ? data.image : "./missing-images/jasper-image.webp"}" alt=""></div>
-        
+        <div class="h-[250px] border border-red-600 p-3"><img class = "w-[100%] h-[100%] rounded-xl" src="${data.image}" alt=""></div>
+        <div class="pl-4 mt-2">
+            <h3 class="font-bold text-lg text-[#111]">Features :</h3>
+            <p class="text-[#585858] pl-1"> 1. ${data.features[0]}</p>
+            <p class="text-[#585858] pl-1"> 2. ${data.features[1]}</p>
+            <p class="text-[#585858] pl-1"> 3. ${data.features[2]}</p>
+        </div>
         
         `;
         cardContainer.appendChild(cardDiv);
