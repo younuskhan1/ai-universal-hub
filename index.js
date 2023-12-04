@@ -1,4 +1,5 @@
 const loadAiData = async (dataLimit) => {
+    showingSpinner(true);
     const url = `https://openapi.programming-hero.com/api/ai/tools`;
     try {
         const response = await fetch(url);
@@ -45,8 +46,18 @@ const displayAiData = (aiData, dataLimit) => {
         `;
         cardContainer.appendChild(cardDiv);
     })
+    showingSpinner(false);
 }
 
+const loadingSpinnerContainer = document.getElementById("loading-spinner");
+
+const showingSpinner = (loadingSpinner) => {
+    if (loadingSpinner) {
+        loadingSpinnerContainer.classList.remove("hidden");
+    } else {
+        loadingSpinnerContainer.classList.add("hidden");
+    }
+}
 const seeMore = (dataLimit) => {
     loadAiData(dataLimit);
 }
