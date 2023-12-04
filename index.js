@@ -15,7 +15,8 @@ const loadAiData = async (dataLimit) => {
 const seeMoreContainer = document.getElementById("see-more-container");
 
 const displayAiData = (aiData, dataLimit) => {
-    console.log(dataLimit);
+    console.log(aiData);
+    // console.log(aiData.map((date) => date.published_in));
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
     if (dataLimit && aiData.length > 6) {
@@ -47,6 +48,25 @@ const displayAiData = (aiData, dataLimit) => {
         cardContainer.appendChild(cardDiv);
     })
     showingSpinner(false);
+}
+
+const sortedDataByDate = async () => {
+    const url = `https://openapi.programming-hero.com/api/ai/tools`;
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const dataForSorting = data.data.tools;
+        // console.log(dataForSorting);
+        const sortedDate = dataForSorting.sort((a, b) => {
+            return parseFloat(b.published_in) - parseFloat(a.published_in);
+        })
+        // console.log(sortedDate.map(data => data.published_in));
+        // console.log(sortedDate);
+        displayAiData(sortedDate);
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 const loadingSpinnerContainer = document.getElementById("loading-spinner");
