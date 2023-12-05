@@ -42,7 +42,7 @@ const displayAiData = (aiData, dataLimit) => {
             <h2 class="font-bold text-lg text-[#111] pb-2">${data.name}</h2>
             <p class="text-[#585858]"><i class="fa-regular fa-calendar-days pr-2"></i>${data.published_in}</P>
           </div>
-          <div class="flex justify-center items-center bg-[#FEF7F7] cursor-pointer hover:bg-[#f3a5a5] rounded-full"><i class="fa-solid fa-arrow-right text-[#EB5757] py-[14px] px-[14px] hover:text-white"></i></div>
+          <div class="flex justify-center items-center bg-[#FEF7F7] cursor-pointer hover:bg-[#f3a5a5] rounded-full" onClick="showDetailsOfCard('${data.id}')"><i class="fa-solid fa-arrow-right text-[#EB5757] py-[14px] px-[14px] hover:text-white"></i></div>
         </div>
         `;
         cardContainer.appendChild(cardDiv);
@@ -109,5 +109,47 @@ const showingSpinner = (loadingSpinner) => {
 const seeMore = (dataLimit) => {
     loadAiData(dataLimit);
 }
+
+const showDetailsContainer = document.getElementById("show-details-container");
+
+const showDetailsOfCard = async (cardId) => {
+    // console.log(cardId);
+    const url = ` https://openapi.programming-hero.com/api/ai/tool/${cardId}`;
+    try {
+        const response = await fetch(url);
+        const showDetailData = await response.json()
+        const data = showDetailData.data;
+        displayShowDetailsData(data);
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+const displayShowDetailsData = (data) => {
+    console.log(data);
+
+    showDetailsContainer.innerHTML = `
+        <dialog id="my_modal_5" class="modal">
+            <div class="modal-box">
+                <div>
+                    <div class="bg-[#FEF7F7] p-3 rounded-xl">
+                    <h3 class="font-bold text-lg">${data.description}</h3>
+                    <div class="flex justify-evenly gap-3 py-5">
+                        <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-3 text-[#03A30A] font-semibold">${data.pricing ? data.pricing[0].price : "data not avilable"}</span></div>
+                        <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#F28927] font-semibold">${data.pricing ? data.pricing[1].price : "data not avilable"}</span></div>
+                        <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#EB5757] font-semibold">${data.pricing ? data.pricing[2].price : "data not avilable"}</span></div>
+                    </div>
+                    </div>
+                    <form method="dialog">
+                         <div class="flex justify-center"><button class="btn btn-warning outline-none">Close</button></div>
+                    </form>
+                </div>    
+            </div>
+        </dialog>
+    `;
+    my_modal_5.showModal()
+}
+
 
 loadAiData(true);
