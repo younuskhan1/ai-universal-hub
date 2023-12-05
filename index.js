@@ -132,19 +132,38 @@ const displayShowDetailsData = (data) => {
     showDetailsContainer.innerHTML = `
         <dialog id="my_modal_5" class="modal">
             <div class="modal-box">
-                <div>
-                    <div class="bg-[#FEF7F7] p-3 rounded-xl">
-                    <h3 class="font-bold text-lg">${data.description}</h3>
-                    <div class="flex justify-evenly gap-3 py-5">
-                        <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-3 text-[#03A30A] font-semibold">${data.pricing ? data.pricing[0].price : "data not avilable"}</span></div>
-                        <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#F28927] font-semibold">${data.pricing ? data.pricing[1].price : "data not avilable"}</span></div>
-                        <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#EB5757] font-semibold">${data.pricing ? data.pricing[2].price : "data not avilable"}</span></div>
+                <div class="">
+                    <div class="max-w-[420px] h-[400px] m-auto border-[1px] border-[#E7E7E7] rounded-xl"><img class="w-[100%] h-[70%] rounded-xl p-5" src="${data.image_link[0]}" alt=""></div>
+                    <div class="bg-[#FEF7F7] p-4 rounded-xl m-auto max-w-[420px] border-[1px] border-[#EB5757]">
+                       <h3 class="font-bold text-lg">${data.description}</h3>
+                       <div class="flex justify-evenly gap-2 py-4">
+                            <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-3 text-[#03A30A] font-semibold">${data.pricing ? data.pricing[0].price : "data not avilable"}</span></div>
+                            <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#F28927] font-semibold">${data.pricing ? data.pricing[1].price : "data not avilable"}</span></div>
+                            <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#EB5757] font-semibold">${data.pricing ? data.pricing[2].price : "data not avilable"}</span></div>
+                       </div>
+                       <div class="flex gap-2 justify-between">
+                                <div>
+                                    <h1 class="font-bold text-lg"> Features </h1>
+                                    <li class="text-[#585858]">${data.features[1].feature_name}</li>
+                                    <li class="text-[#585858]">${data.features[2].feature_name}</li>
+                                    <li class="text-[#585858]">${data.features[3].feature_name}</li>
+                                    <li class="text-[#585858]">${data.features[4] ? data.features[4].feature_name : "no data avilable"}</li>
+                                </div>
+                                <div>
+                                    <h1 class="font-bold text-lg"> Integrations </h1>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[0] ? data.integrations[0] : "no data available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[1] ? data.integrations[1] : "no data available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[2] ? data.integrations[2] : "no data available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[3] ? data.integrations[3] : "no data available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[4] ? data.integrations[4] : "no data available" : "no integrations"}</li>
+                                </div>
+                        </div>
                     </div>
-                    </div>
-                    <form method="dialog">
+                     
+                </div>   
+                <form method="dialog">
                          <div class="flex justify-center"><button class="btn btn-warning outline-none">Close</button></div>
-                    </form>
-                </div>    
+                </form> 
             </div>
         </dialog>
     `;
