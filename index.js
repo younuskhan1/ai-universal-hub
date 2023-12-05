@@ -166,7 +166,7 @@ const displayShowDetailsData = (data) => {
                      
                 </div>   
                 <form method="dialog">
-                         <div class="flex justify-center w-[28] h-[28] bg-[#EB5757]"><i class="fa-solid fa-xmark"></i></div>
+                         <div class="flex justify-center pt-4"><button class="btn bg-[#EB5757] outline-none rounded-full hover:bg-[black]"><i class="fa-solid fa-xmark text-white text-xl"></i></button></div>
                 </form> 
             </div>
         </dialog>
