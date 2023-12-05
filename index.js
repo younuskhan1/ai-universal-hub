@@ -133,7 +133,11 @@ const displayShowDetailsData = (data) => {
         <dialog id="my_modal_5" class="modal">
             <div class="modal-box">
                 <div class="">
-                    <div class="max-w-[420px] h-[400px] m-auto border-[1px] border-[#E7E7E7] rounded-xl"><img class="w-[100%] h-[70%] rounded-xl p-5" src="${data.image_link[0]}" alt=""></div>
+                    <div class="max-w-[420px] h-[400px] m-auto border-[1px] border-[#E7E7E7] rounded-xl p-4">
+                        <img class = "w-[100%] h-[70%] rounded-xl" src="${data.image_link[0]}" alt="">
+                        <p class="font-bold text-lg py-3 text-center">${data.input_output_examples ? data.input_output_examples[0].input : "no data available"}</P>
+                        <p class="text-[#585858] text-center">${data.input_output_examples ? data.input_output_examples[0].output : "no data available"}</P>
+                    </div>
                     <div class="bg-[#FEF7F7] p-4 rounded-xl m-auto max-w-[420px] border-[1px] border-[#EB5757]">
                        <h3 class="font-bold text-lg">${data.description}</h3>
                        <div class="flex justify-evenly gap-2 py-4">
