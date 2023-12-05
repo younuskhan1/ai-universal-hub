@@ -134,9 +134,9 @@ const displayShowDetailsData = (data) => {
             <div class="modal-box">
                 <div class="">
                     <div class="max-w-[420px] h-[400px] m-auto border-[1px] border-[#E7E7E7] rounded-xl p-4">
-                        <img class = "w-[100%] h-[70%] rounded-xl" src="${data.image_link[0]}" alt="">
+                        <div class = "w-[100%] h-[60%]"><img class = "w-[100%] h-[100%] rounded-xl" src="${data.image_link[0]}" alt=""></div>
                         <p class="font-bold text-lg py-3 text-center">${data.input_output_examples ? data.input_output_examples[0].input : "no data available"}</P>
-                        <p class="text-[#585858] text-center">${data.input_output_examples ? data.input_output_examples[0].output : "no data available"}</P>
+                        <p class="text-[#585858] text-center">${data.input_output_examples ? (data.input_output_examples[0].output).slice(0, 99) : "no data available"}</P>
                     </div>
                     <div class="bg-[#FEF7F7] p-4 rounded-xl m-auto max-w-[420px] border-[1px] border-[#EB5757]">
                        <h3 class="font-bold text-lg">${data.description}</h3>
@@ -155,11 +155,11 @@ const displayShowDetailsData = (data) => {
                                 </div>
                                 <div>
                                     <h1 class="font-bold text-lg"> Integrations </h1>
-                                    <li class="text-[#585858]">${data.integrations ? data.integrations[0] ? data.integrations[0] : "no data available" : "no integrations"}</li>
-                                    <li class="text-[#585858]">${data.integrations ? data.integrations[1] ? data.integrations[1] : "no data available" : "no integrations"}</li>
-                                    <li class="text-[#585858]">${data.integrations ? data.integrations[2] ? data.integrations[2] : "no data available" : "no integrations"}</li>
-                                    <li class="text-[#585858]">${data.integrations ? data.integrations[3] ? data.integrations[3] : "no data available" : "no integrations"}</li>
-                                    <li class="text-[#585858]">${data.integrations ? data.integrations[4] ? data.integrations[4] : "no data available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[0] ? data.integrations[0] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[1] ? data.integrations[1] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[2] ? data.integrations[2] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[3] ? data.integrations[3] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[4] ? data.integrations[4] : "not available" : "no integrations"}</li>
                                 </div>
                         </div>
                     </div>
