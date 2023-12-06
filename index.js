@@ -132,45 +132,45 @@ const displayShowDetailsData = (data) => {
     showDetailsContainer.innerHTML = `
         <dialog id="my_modal_5" class="modal">
             <div class="relative">
-            <div class="modal-box m-5">
-            <div>
-                <div class="max-w-[420px] h-[400px] m-auto border-[1px] border-[#E7E7E7] rounded-xl p-4 mb-4">
-                    <div class = "w-[100%] h-[60%]"><img class = "w-[100%] h-[100%] rounded-xl" src="${data.image_link[0]}" alt=""></div>
-                    <p class="font-bold text-lg py-3 text-center">${data.input_output_examples ? data.input_output_examples[0].input : "no data available"}</P>
-                    <p class="text-[#585858] text-center">${data.input_output_examples ? (data.input_output_examples[0].output).slice(0, 99) : "no data available"}</P>
-                </div>
-                <div class="bg-[#FEF7F7] p-4 rounded-xl m-auto max-w-[420px] border-[1px] border-[#EB5757]">
-                   <h3 class="font-bold text-lg">${data.description}</h3>
-                   <div class="flex justify-evenly gap-2 py-4">
-                        <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-3 text-[#03A30A] font-semibold">${data.pricing ? data.pricing[0].price : "data not avilable"}</span></div>
-                        <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#F28927] font-semibold">${data.pricing ? data.pricing[1].price : "data not avilable"}</span></div>
-                        <div class="w-[100px] h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#EB5757] font-semibold">${data.pricing ? data.pricing[2].price : "data not avilable"}</span></div>
-                   </div>
-                   <div class="flex gap-2 justify-between">
-                            <div>
-                                <h1 class="font-bold text-lg"> Features </h1>
-                                <li class="text-[#585858]">${data.features[1].feature_name}</li>
-                                <li class="text-[#585858]">${data.features[2].feature_name}</li>
-                                <li class="text-[#585858]">${data.features[3].feature_name}</li>
-                                <li class="text-[#585858]">${data.features[4] ? data.features[4].feature_name : "no data avilable"}</li>
-                            </div>
-                            <div>
-                                <h1 class="font-bold text-lg"> Integrations </h1>
-                                <li class="text-[#585858]">${data.integrations ? data.integrations[0] ? data.integrations[0] : "not available" : "no integrations"}</li>
-                                <li class="text-[#585858]">${data.integrations ? data.integrations[1] ? data.integrations[1] : "not available" : "no integrations"}</li>
-                                <li class="text-[#585858]">${data.integrations ? data.integrations[2] ? data.integrations[2] : "not available" : "no integrations"}</li>
-                                <li class="text-[#585858]">${data.integrations ? data.integrations[3] ? data.integrations[3] : "not available" : "no integrations"}</li>
-                                <li class="text-[#585858]">${data.integrations ? data.integrations[4] ? data.integrations[4] : "not available" : "no integrations"}</li>
-                            </div>
+              <div class="modal-box">
+                <div>
+                    <div class="max-w-[420px] lg:h-[400px] md:h-[400px] h-auto m-auto border-[1px] border-[#E7E7E7] rounded-xl lg:p-4 md:p-4 p-1 mb-4">
+                        <div class = "w-[100%] h-[60%]"><img class = "w-[100%] h-[100%] rounded-xl" src="${data.image_link[0]}" alt=""></div>
+                        <p class="font-bold text-lg py-3 text-center">${data.input_output_examples ? data.input_output_examples[0].input : "no data available"}</P>
+                        <p class="text-[#585858] text-center">${data.input_output_examples ? (data.input_output_examples[0].output).slice(0, 99) : "no data available"}</P>
                     </div>
-                </div>
+                    <div class="bg-[#FEF7F7] lg:p-4 md:p-4 p-2 rounded-xl m-auto max-w-[420px] border-[1px] border-[#EB5757]">
+                        <h3 class="font-bold text-lg">${data.description}</h3>
+                        <div class="flex lg:flex-row md:flex-row flex-col justify-evenly gap-2 py-4">
+                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-3 text-[#03A30A] font-semibold">${data.pricing ? data.pricing[0].price : "data not avilable"}</span></div>
+                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#F28927] font-semibold">${data.pricing ? data.pricing[1].price : "data not avilable"}</span></div>
+                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#EB5757] font-semibold">${data.pricing ? data.pricing[2].price : "data not avilable"}</span></div>
+                        </div>
+                        <div class="flex gap-2 lg:flex-row md:flex-row flex-col justify-between">
+                                <div>
+                                    <h1 class="font-bold text-lg"> Features </h1>
+                                    <li class="text-[#585858]">${data.features[1].feature_name}</li>
+                                    <li class="text-[#585858]">${data.features[2].feature_name}</li>
+                                    <li class="text-[#585858]">${data.features[3].feature_name}</li>
+                                    <li class="text-[#585858]">${data.features[4] ? data.features[4].feature_name : "no data avilable"}</li>
+                                </div>
+                                <div>
+                                    <h1 class="font-bold text-lg"> Integrations </h1>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[0] ? data.integrations[0] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[1] ? data.integrations[1] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[2] ? data.integrations[2] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[3] ? data.integrations[3] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[4] ? data.integrations[4] : "not available" : "no integrations"}</li>
+                                </div>
+                            </div>
+                        </div>
                  
-            </div>   
+                    </div>   
              
                 </div>
                 <form method="dialog">
-                    <div class="flex justify-center pt-4"><button class="absolute left-[10px] top-[10px] btn bg-[#EB5757] outline-none rounded-full hover:bg-[black]"><i class="fa-solid fa-xmark text-white text-xl"></i></button></div>
-               </form>
+                    <div class="flex justify-center pt-4"><button class="absolute left-[-15px] top-[-15px] btn bg-[#EB5757] outline-none rounded-full hover:bg-[black]"><i class="fa-solid fa-xmark text-white text-xl"></i></button></div>
+                </form>
             </div>
         </dialog>
     `;
