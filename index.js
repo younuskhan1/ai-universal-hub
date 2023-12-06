@@ -142,26 +142,26 @@ const displayShowDetailsData = (data) => {
                         <div class="bg-[#FEF7F7] lg:p-4 md:p-4 p-2 rounded-xl m-auto max-w-[420px] border-[1px] border-[#EB5757]">
                             <h3 class="font-bold text-lg">${data.description}</h3>
                             <div class="flex lg:flex-row md:flex-row flex-col justify-evenly gap-2 py-4">
-                                    <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-3 text-[#03A30A] font-semibold">${data.pricing ? data.pricing[0].price : "data not avilable"}</span></div>
-                                    <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#F28927] font-semibold">${data.pricing ? data.pricing[1].price : "data not avilable"}</span></div>
-                                    <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#EB5757] font-semibold">${data.pricing ? data.pricing[2].price : "data not avilable"}</span></div>
+                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-3 text-[#03A30A] font-semibold">${data.pricing ? data.pricing[0].price : "data not avilable"}</span></div>
+                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#F28927] font-semibold">${data.pricing ? data.pricing[1].price : "data not avilable"}</span></div>
+                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#EB5757] font-semibold">${data.pricing ? data.pricing[2].price : "data not avilable"}</span></div>
                             </div>
                             <div class="flex gap-2 lg:flex-row md:flex-row flex-col justify-between">
-                                    <div>
-                                        <h1 class="font-bold text-lg"> Features </h1>
-                                        <li class="text-[#585858]">${data.features[1].feature_name}</li>
-                                        <li class="text-[#585858]">${data.features[2].feature_name}</li>
-                                        <li class="text-[#585858]">${data.features[3].feature_name}</li>
-                                        <li class="text-[#585858]">${data.features[4] ? data.features[4].feature_name : "no data avilable"}</li>
-                                    </div>
-                                    <div>
-                                        <h1 class="font-bold text-lg"> Integrations </h1>
-                                        <li class="text-[#585858]">${data.integrations ? data.integrations[0] ? data.integrations[0] : "not available" : "no integrations"}</li>
-                                        <li class="text-[#585858]">${data.integrations ? data.integrations[1] ? data.integrations[1] : "not available" : "no integrations"}</li>
-                                        <li class="text-[#585858]">${data.integrations ? data.integrations[2] ? data.integrations[2] : "not available" : "no integrations"}</li>
-                                        <li class="text-[#585858]">${data.integrations ? data.integrations[3] ? data.integrations[3] : "not available" : "no integrations"}</li>
-                                        <li class="text-[#585858]">${data.integrations ? data.integrations[4] ? data.integrations[4] : "not available" : "no integrations"}</li>
-                                    </div>
+                                <div class="lg:pl-0 md:pl-0 pl-3">
+                                    <h1 class="font-bold text-lg"> Features </h1>
+                                    <li class="text-[#585858]">${data.features[1].feature_name}</li>
+                                    <li class="text-[#585858]">${data.features[2].feature_name}</li>
+                                    <li class="text-[#585858]">${data.features[3].feature_name}</li>
+                                    <li class="text-[#585858]">${data.features[4] ? data.features[4].feature_name : "no data avilable"}</li>
+                                </div>
+                                <div class="lg:pl-0 md:pl-0 pl-3">
+                                    <h1 class="font-bold text-lg"> Integrations </h1>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[0] ? data.integrations[0] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[1] ? data.integrations[1] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[2] ? data.integrations[2] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[3] ? data.integrations[3] : "not available" : "no integrations"}</li>
+                                    <li class="text-[#585858]">${data.integrations ? data.integrations[4] ? data.integrations[4] : "not available" : "no integrations"}</li>
+                                </div>
                             </div>
                         </div>
                     
