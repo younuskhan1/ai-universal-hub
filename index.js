@@ -131,9 +131,9 @@ const displayShowDetailsData = (data) => {
 
     showDetailsContainer.innerHTML = `
         <dialog id="my_modal_5" class="modal">
-            <div class="modal-box">
-                <div class="">
-                    <div class="max-w-[420px] h-[400px] m-auto border-[1px] border-[#E7E7E7] rounded-xl p-4">
+            <div class="modal-box m-5">
+                <div>
+                    <div class="max-w-[420px] h-[400px] m-auto border-[1px] border-[#E7E7E7] rounded-xl p-4 mb-4">
                         <div class = "w-[100%] h-[60%]"><img class = "w-[100%] h-[100%] rounded-xl" src="${data.image_link[0]}" alt=""></div>
                         <p class="font-bold text-lg py-3 text-center">${data.input_output_examples ? data.input_output_examples[0].input : "no data available"}</P>
                         <p class="text-[#585858] text-center">${data.input_output_examples ? (data.input_output_examples[0].output).slice(0, 99) : "no data available"}</P>
@@ -165,10 +165,11 @@ const displayShowDetailsData = (data) => {
                     </div>
                      
                 </div>   
-                <form method="dialog">
-                         <div class="flex justify-center pt-4"><button class="btn bg-[#EB5757] outline-none rounded-full hover:bg-[black]"><i class="fa-solid fa-xmark text-white text-xl"></i></button></div>
-                </form> 
+                 
             </div>
+            <form method="dialog">
+                         <div class="flex justify-center pt-4"><button class="absolute left-[370px] top-[10px] btn bg-[#EB5757] outline-none rounded-full hover:bg-[black]"><i class="fa-solid fa-xmark text-white text-xl"></i></button></div>
+                </form>
         </dialog>
     `;
     my_modal_5.showModal()
