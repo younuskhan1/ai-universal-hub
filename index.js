@@ -137,7 +137,7 @@ const displayShowDetailsData = (data) => {
                         <div class="max-w-[420px] lg:h-[400px] md:h-[400px] h-auto m-auto border-[1px] border-[#E7E7E7] rounded-xl lg:p-4 md:p-4 p-1 mb-4">
                             <div class = "w-[100%] h-[60%] relative">
                                 <img class = "w-[100%] h-[100%] rounded-xl" src="${data.image_link[0]}" alt="">
-                                <div>${data.accuracy.score ? `<p class="pt-1 rounded-lg text-center font-semibold w-[130px] h-[32px] bg-[#EB5757] text-white absolute right-2 top-2">${data.accuracy.score * 100}<span>% accuracy</span></p>` : ""}</div>
+                                <div class="w-[130px] h-[32px] flex justify-center items-center">${data.accuracy.score ? `<p class=" py-1 px-3 rounded-lg font-semibold bg-[#EB5757] text-white absolute right-2 top-2">${data.accuracy.score * 100}<span>% accuracy</span></p>` : ""}</div>
 
                             </div>
                             <p class="font-bold text-lg py-3 text-center">${data.input_output_examples ? data.input_output_examples[0].input : "no data available"}</P>
