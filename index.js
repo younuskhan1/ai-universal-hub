@@ -127,7 +127,7 @@ const showDetailsOfCard = async (cardId) => {
 }
 
 const displayShowDetailsData = (data) => {
-    console.log(data);
+    // console.log(data);
 
     showDetailsContainer.innerHTML = `
         <dialog id="my_modal_5" class="modal">
@@ -146,9 +146,9 @@ const displayShowDetailsData = (data) => {
                         <div class="bg-[#FEF7F7] lg:p-4 md:p-4 p-2 rounded-xl m-auto max-w-[420px] border-[1px] border-[#EB5757]">
                             <h3 class="font-bold text-lg">${data.description}</h3>
                             <div class="flex lg:flex-row md:flex-row flex-col justify-evenly gap-2 py-4">
-                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-3 text-[#03A30A] font-semibold">${data.pricing ? data.pricing[0].price : "data not avilable"}</span></div>
-                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#F28927] font-semibold">${data.pricing ? data.pricing[1].price : "data not avilable"}</span></div>
-                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#EB5757] font-semibold">${data.pricing ? data.pricing[2].price : "data not avilable"}</span></div>
+                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-3 text-[#03A30A] font-semibold">${data.pricing ? data.pricing[0].price : "free of cost"}</span></div>
+                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#F28927] font-semibold">${data.pricing ? data.pricing[1].price : "free of cost"}</span></div>
+                                <div class="lg:w-[100px] md:w-[100px] w-auto h-[90px] bg-white rounded-2xl flex justify-center items-center"><span class="break-words px-4 text-[#EB5757] font-semibold">${data.pricing ? data.pricing[2].price : "free of cost"}</span></div>
                             </div>
                             <div class="flex gap-2 lg:flex-row md:flex-row flex-col justify-between">
                                 <div class="lg:pl-0 md:pl-0 pl-3">
