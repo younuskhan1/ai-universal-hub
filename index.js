@@ -127,7 +127,7 @@ const showDetailsOfCard = async (cardId) => {
 }
 
 const displayShowDetailsData = (data) => {
-    console.log(data);
+    // console.log(data);
 
     showDetailsContainer.innerHTML = `
         <dialog id="my_modal_5" class="modal">
@@ -156,7 +156,7 @@ const displayShowDetailsData = (data) => {
                                     <p class="text-[#585858]"> 1. ${data.features[1].feature_name}</p>
                                     <p class="text-[#585858]"> 2. ${data.features[2].feature_name}</p>
                                     <p class="text-[#585858]"> 3. ${data.features[3].feature_name}</p>
-                                    <p class="text-[#585858]"> 4. ${data.features[4] ? data.features[4].feature_name : "no data avilable"}</p>
+                                    <p class="text-[#585858]"> 4. ${data.features[4] ? data.features[4].feature_name : "no data available"}</p>
                                 </div>
                                 <div class="lg:pl-0 md:pl-0 pl-3">
                                     <h1 class="font-bold text-lg"> Integrations </h1>
@@ -173,7 +173,7 @@ const displayShowDetailsData = (data) => {
              
                 </div>
                 <form method="dialog">
-                    <div class="flex justify-center pt-4"><button class="absolute left-[-15px] top-[-15px] btn bg-[#EB5757] outline-none border-none rounded-full hover:bg-[black]"><i class="fa-solid fa-xmark text-white text-xl"></i></button></div>
+                    <div class="flex justify-center pt-4"><button class="absolute left-[-15px] top-[-15px] btn btn-secondary outline-none border-none rounded-full hover:bg-[#EB5757]"><i class="fa-solid fa-xmark text-white text-xl"></i></button></div>
                 </form>
             </div>
         </dialog>
